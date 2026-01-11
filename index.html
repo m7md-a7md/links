@@ -175,6 +175,58 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
   .card{padding:20px}
   .avatar{width:88px;height:88px}
 }
+  
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.glow-link{
+    position: relative;
+    padding: 12px 28px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    z-index: 1;
+}
+
+
+.glow-link::before{
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 40px;
+    background: linear-gradient(
+        90deg,
+        #00f0ff,
+        #a855f7,
+        #00f0ff
+    );
+    z-index: -1;
+    filter: blur(6px);
+    animation: spin 4s linear infinite;
+}
+
+
+.glow-link::after{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #081226;
+    border-radius: 40px;
+    z-index: -1;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 </style>
 
 </head>
@@ -191,8 +243,9 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
 
 
 
-      <div class="footer">© m7md-a7md 2026</div>
-    </div>
+     <div class="footer">
+  <a href="https://m7md-a7md.github.io/links/" class="glow-link">m7md-a7md</a>@
+</div>
   </div>
 
   <script>
@@ -262,3 +315,4 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
 </body>
 
 </html>
+
