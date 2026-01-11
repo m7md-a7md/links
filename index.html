@@ -179,11 +179,11 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
 .footer{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 
-.glow-link{
+.shimmer-link{
     position: relative;
     padding: 12px 28px;
     color: #fff;
@@ -191,36 +191,33 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
     font-weight: 600;
     letter-spacing: 1px;
     border-radius: 40px;
-    z-index: 1;
+    background: rgba(255,255,255,0.04);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 
-.glow-link::before{
+.shimmer-link::before{
     content: "";
     position: absolute;
-    inset: -3px;
-    border-radius: 40px;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
     background: linear-gradient(
-        90deg,
-        #00f0ff,
-        #a855f7,
-        #00f0ff
+        120deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
     );
-    z-index: -1;
-    filter: blur(6px);
-    animation: spin 4s linear infinite;
+    animation: shimmer 3s infinite;
 }
 
 
-
-
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(60deg); }
-}
-
-</style>
+@keyframes shimmer{
+    0% { left: -150%; }
+    50% { left: 150%; }
+    100% { left: 150%; }</style>
 
 </head>
 <body>
@@ -308,5 +305,6 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
 </body>
 
 </html>
+
 
 
