@@ -177,47 +177,51 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
 }
   
 .footer{
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
 }
 
 
-.shimmer-link{
-    position: relative;
-    padding: 12px 28px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 40px;
-    background: rgba(255,255,255,0.04);
-    overflow: hidden;
-    backdrop-filter: blur(10px);
+.wave-link{
+  position: relative;
+  padding: 14px 36px;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 40px;
+  background: rgba(255,255,255,0.05);
+  overflow: hidden;
 }
 
 
-.shimmer-link::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.8),
-        transparent
-    );
-    animation: shimmer 3s infinite;
+.wave-link::after{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-150%;
+  width:200%;
+  height:200%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0,240,255,0.9),
+    rgba(168,85,247,0.4),
+    transparent 60%
+  );
+  animation: wave 4s linear infinite;
+  opacity:0.8;
 }
 
 
-@keyframes shimmer{
-    0% { left: -150%; }
-    50% { left: 150%; }
-    100% { left: 150%; }</style>
+@keyframes wave{
+  0%{
+    transform: translateX(-100%) rotate(0deg);
+  }
+  100%{
+    transform: translateX(100%) rotate(360deg);
+  
+</style>
 
 </head>
 <body>
@@ -305,6 +309,7 @@ h2{margin:6px 0 0;font-size:14px;color:var(--muted);font-weight:400}
 </body>
 
 </html>
+
 
 
 
